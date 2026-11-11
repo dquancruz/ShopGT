@@ -33,3 +33,38 @@ async function request(ruta) {
     throw new Error('La respuesta del servidor no es válida.');
   }
 }
+
+/**
+ * Obtiene todos los productos de la tienda.
+ * @returns {Promise<Array<Object>>} Lista de productos (id, title, price, thumbnail, etc.).
+ * @example
+ * const productos = await getProducts();
+ */
+export async function getProducts() {
+  // limit=0 le pide a DummyJSON todos los productos en vez de solo los primeros 30
+  const datos = await request('/products?limit=0');
+  return datos.products;
+}
+
+/**
+ * Busca productos por texto (nombre, descripción, marca...).
+ * @param {string} q Texto a buscar.
+ * @returns {Promise<Array<Object>>} Productos que coinciden; arreglo vacío si no hay.
+ * @example
+ * const resultados = await searchProducts('phone');
+ */
+export async function searchProducts(q) {
+  const datos = await request(`/products/search?q=${encodeURIComponent(q)}&limit=0`);
+  return datos.products;
+}
+
+/**
+ * Obtiene el detalle completo de un producto.
+ * @param {number|string} id Identificador del producto.
+ * @returns {Promise<Object>} El producto (incluye images, description, rating, reviews, etc.).
+ * @example
+ * const producto = await getProductById(1);
+ */
+export async function getProductById(id) {
+  return request(`/products/${id}`);
+}
