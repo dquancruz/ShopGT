@@ -68,3 +68,26 @@ export async function searchProducts(q) {
 export async function getProductById(id) {
   return request(`/products/${id}`);
 }
+
+/**
+ * Obtiene la lista de categorías disponibles.
+ * @returns {Promise<Array<{slug: string, name: string, url: string}>>} Categorías;
+ *   usa `slug` para pedir sus productos y `name` para mostrarlas al usuario.
+ * @example
+ * const categorias = await getCategories();
+ */
+export async function getCategories() {
+  return request('/products/categories');
+}
+
+/**
+ * Obtiene los productos de una categoría.
+ * @param {string} slug Identificador de la categoría (por ejemplo 'smartphones').
+ * @returns {Promise<Array<Object>>} Productos de esa categoría.
+ * @example
+ * const celulares = await getProductsByCategory('smartphones');
+ */
+export async function getProductsByCategory(slug) {
+  const datos = await request(`/products/category/${encodeURIComponent(slug)}?limit=0`);
+  return datos.products;
+}
