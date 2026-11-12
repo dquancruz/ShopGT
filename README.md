@@ -52,6 +52,13 @@ Si el celular no logra conectarse, prueba con `npx expo start --tunnel`.
 └── .github/            # Plantillas de issues y pull requests
 ```
 
+## Cómo subir cambios
+
+1. Antes de empezar, ejecuta `git pull`.
+2. Haz commits pequeños con mensajes claros (`feat:`, `fix:`, `docs:`).
+3. Cuando termines un issue, escribe `closes #N` en el mensaje del último commit para que se cierre solo. Ejemplo: `feat: pantalla del carrito (closes #24)`.
+4. Luego ejecuta `git push` a main.
+
 ## Equipo
 
 <!-- Cada integrante se agrega aquí en el ticket T04. -->
