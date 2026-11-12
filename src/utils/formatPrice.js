@@ -14,5 +14,5 @@ const formateador = new Intl.NumberFormat('en-US', {
  * formatPrice(1299.9); // "$1,299.90"
  */
 export function formatPrice(valor) {
-  return formateador.format(valor);
+  return formateador.format(Number(valor) || 0);
 }
