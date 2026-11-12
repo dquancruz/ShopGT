@@ -62,3 +62,5 @@ Si el celular no logra conectarse, prueba con `npx expo start --tunnel`.
 ## Equipo
 
 <!-- Cada integrante se agrega aquí en el ticket T04. -->
+
+- Ronald Melgar (ronyMelgar) - P3 (Búsqueda y categorías)
