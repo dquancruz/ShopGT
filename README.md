@@ -65,3 +65,4 @@ Si el celular no logra conectarse, prueba con `npx expo start --tunnel`.
 
 - Alexander Oliva (XanderiukS) - p5 (Carrito)
 - Ronald Melgar (ronyMelgar) - P4 (Detalle de producto)
+- Jerson Chiyal (jersonchiyal3-star) - P6 (Diseño, QA y presentación)
